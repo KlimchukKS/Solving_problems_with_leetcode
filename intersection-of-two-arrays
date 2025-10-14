@@ -1,3 +1,6 @@
+// По скорости O(logn2 + n1 + logi * i) - где n1 = nums1.size(), n2 = nums2.size(), i - количество пересечений
+// По памяти O(logn1 + logn2)
+
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
