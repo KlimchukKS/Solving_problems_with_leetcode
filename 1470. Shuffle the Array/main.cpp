@@ -1,3 +1,6 @@
+// По скорости O(n)
+// По памяти O(n)
+
 class Solution {
 public:
     vector<int> shuffle(vector<int>& nums, int n) {
