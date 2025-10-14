@@ -1,3 +1,6 @@
+// По скорости O(n^2)
+// По памяти O(1)
+
 class Solution {
 public:
     int countPairs(vector<int>& nums, int target) {
