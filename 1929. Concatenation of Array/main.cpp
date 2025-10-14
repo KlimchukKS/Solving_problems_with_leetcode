@@ -1,3 +1,6 @@
+// По скорости O(2n) по правилам убираем константы остается O(n)
+// По памяти O(n)
+
 class Solution {
 public:
     vector<int> getConcatenation(vector<int>& nums) {
