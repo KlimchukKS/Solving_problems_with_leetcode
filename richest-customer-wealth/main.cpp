@@ -1,3 +1,6 @@
+// По скорости O(n * m)
+// По памяти O(1)
+
 class Solution {
 public:
     int maximumWealth(vector<vector<int>>& accounts) {
