@@ -1,3 +1,6 @@
+// По скорости O(n1 + n2) где n1 - это сумма всех элемантов в строках, word2 по аналогии
+// По памяти O(1)
+
 class Solution {
 public:
     bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
