@@ -1,6 +1,5 @@
-// По скорости O(n2 + n1 + logi * i) - где n1 = nums1.size(), n2 = nums2.size(), i - количество пересечений
-// Если переписать на unordered_set O(n2 + n1)
-// По памяти O(i + unique_n2) - где unique_n2 кол-во уникальных объектов в nums2
+// По скорости O(n2 + n1)
+// По памяти O(n2)
 
 class Solution {
 public:
