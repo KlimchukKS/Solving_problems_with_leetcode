@@ -1,0 +1,16 @@
+// По скорости O(logn)
+// По памяти O(1)
+
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& grid) {
+        int counter = 0;
+
+        for (const auto& values : grid) {
+            auto it = std::upper_bound(values.rbegin(), values.rend(), -1);
+            counter += -std::distance(it, values.rbegin());
+        }
+
+        return counter;
+    }
+};
