@@ -1,0 +1,9 @@
+// По скорости O(n)
+// По памяти O(1)
+
+class Solution {
+public:
+    bool isMonotonic(vector<int>& nums) {
+        return std::is_sorted(nums.begin(), nums.end()) || std::is_sorted(nums.rbegin(), nums.rend());
+    }
+};
