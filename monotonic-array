@@ -9,7 +9,6 @@ bool IsSorted(It begin, It end, Compare comp = Compare{}) {
         } else {
             return false;
         }
-
     }
     return true;
 }
