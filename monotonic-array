@@ -1,9 +1,22 @@
 // По скорости O(n)
 // По памяти O(1)
 
+template<typename It, typename Compare = std::less<>>
+bool IsSorted(It begin, It end, Compare comp = Compare{}) {
+    while (begin + 1 != end) {
+        if (comp(begin[0], begin[1]) || begin[0] == begin[1]) {
+            ++begin;
+        } else {
+            return false;
+        }
+
+    }
+    return true;
+}
+
 class Solution {
 public:
-    bool isMonotonic(vector<int>& nums) {
-        return std::is_sorted(nums.begin(), nums.end()) || std::is_sorted(nums.rbegin(), nums.rend());
+    bool isMonotonic(std::vector<int>& nums) {
+        return IsSorted(nums.begin(), nums.end()) || IsSorted(nums.begin(), nums.end(), std::greater{});
     }
 };
