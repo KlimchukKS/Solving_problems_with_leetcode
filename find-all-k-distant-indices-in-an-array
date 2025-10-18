@@ -1,0 +1,39 @@
+// По скорости O(n^2)
+// По памяти O(n)
+
+class Solution {
+public:
+
+    vector<int> FindKeyIndex(vector<int>& nums, int key) {
+        vector<int> ans;
+        ans.reserve(nums.size());
+
+        for (auto i = 0; i < nums.size(); ++i) {
+            if (nums[i] == key) {
+                ans.push_back(i);
+            }
+        }
+
+        return ans;
+    }
+
+    vector<int> findKDistantIndices(vector<int>& nums, int key, int k) {
+        auto key_indexses = FindKeyIndex(nums, key);
+       
+        vector<int> ans;
+        ans.reserve(nums.size());
+        unordered_set<int> copy;
+        copy.reserve(nums.size());
+
+        for (auto i = 0; i < nums.size(); ++i) {
+            for (auto key_index : key_indexses) {
+                if (std::abs(i - key_index) <= k && !copy.count(i)) {
+                    ans.push_back(i);
+                    copy.insert(i);
+                }
+            }
+        }
+
+        return {ans.begin(), ans.end()};
+    }
+};
