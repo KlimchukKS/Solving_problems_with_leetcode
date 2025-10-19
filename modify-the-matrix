@@ -1,0 +1,35 @@
+// По скорости O(m * n)
+// По памяти O(n + m * n)
+
+class Solution {
+public:
+    vector<vector<int>> modifiedMatrix(vector<vector<int>>& matrix) {
+        vector<vector<int>> ans = matrix;
+
+        std::vector<int> max_value_in_col(ans.begin()->size(), 0);
+
+        vector<vector<std::pair<vector<int>::iterator, int>>> iters(ans.size());
+
+        int row_index = 0;
+        for (auto it_col = ans.begin(); it_col != ans.end(); ++it_col, ++row_index) {
+            int col_index = 0;
+            for (auto it_row = it_col->begin(); it_row != it_col->end(); ++it_row, ++col_index) {
+                if (*it_row == -1) {
+                    iters[row_index].push_back({ it_row, col_index});
+                }
+
+                if (max_value_in_col[col_index] < *it_row) {
+                    max_value_in_col[col_index] = *it_row;
+                }
+            }
+        }
+
+        for (auto& row : iters) {
+            for (auto& [it, col] : row) {
+                *it = max_value_in_col[col];
+            }
+        }
+
+        return ans;
+    }
+};
