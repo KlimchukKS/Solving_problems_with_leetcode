@@ -1,4 +1,4 @@
-// По скорости O(logn)
+// По скорости O(log n * m)
 // По памяти O(1)
 
 class Solution {
